@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="群体药动学和药效学分析进阶知识图谱：可搜索、可视化、移动端友好的 PopPK 快速学习网站。">
+  <title>PopPK 快速学习地图</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回首页">
+      <span class="brand-mark">PK</span>
+      <span>
+        <strong>PopPK Learning Map</strong>
+        <small>群体药动学快速学习与知识图谱</small>
+      </span>
+    </a>
+    <nav class="top-nav" aria-label="主导航">
+      <a href="#learn">学习路径</a>
+      <a href="#explore">图谱查询</a>
+      <a href="#checklist">建模检查</a>
+      <a href="#github">GitHub 发布</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero section-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">从“看书”变成“会建模”</p>
+        <h1>用一张动态地图，快速学会群体药代动力学。</h1>
+        <p class="hero-text">
+          这个网页把《群体药动学和药效学分析进阶》的知识图谱变成可搜索、可点击、可按项目使用的学习工具。
+          适合你在做 PopPK 基础模型、协变量筛选、模型诊断和论文写作时快速定位方法。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#learn">从 30 分钟路径开始</a>
+          <a class="button ghost" href="#explore">直接搜索知识点</a>
+        </div>
+        <div class="quick-stats" id="quickStats" aria-live="polite">
+          <span>载入知识图谱中...</span>
+        </div>
+      </div>
+
+      <div class="kinetic-card" aria-label="药动学双通道动画示意">
+        <div class="compartment dose">Dose</div>
+        <div class="flow-line line-a"></div>
+        <div class="compartment central">Central<br><small>血浆浓度</small></div>
+        <div class="flow-line line-b"></div>
+        <div class="compartment renal">Renal CL<br><small>eGFR 驱动</small></div>
+        <div class="flow-line line-c"></div>
+        <div class="compartment nonrenal">Non-eGFR CL<br><small>协变量解释</small></div>
+        <div class="pulse-dot dot-1"></div>
+        <div class="pulse-dot dot-2"></div>
+        <div class="pulse-dot dot-3"></div>
+      </div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="section-heading">
+        <p class="eyebrow">Learning path</p>
+        <h2>30 分钟入门路径</h2>
+        <p>按顺序学，不需要一次读完全书。每一步都对应图谱节点，适合边学边做自己的氨磺必利 PopPK 项目。</p>
+      </div>
+      <div class="learning-board">
+        <div class="lesson-list" id="lessonList"></div>
+        <article class="lesson-detail" id="lessonDetail">
+          <p class="eyebrow">选择左侧步骤</p>
+          <h3>学习目标会显示在这里</h3>
+          <p>点击任意学习步骤，查看该阶段要掌握的概念、常见错误和项目中该做的检查。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section explore" id="explore">
+      <div class="section-heading">
+        <p class="eyebrow">Interactive graph</p>
+        <h2>图谱查询与节点浏览</h2>
+        <p>搜索 `BQL`、`收缩`、`协变量模型`、`TMDD`、`VPC` 等关键词。点击节点后右侧会显示用途、相邻关系和学习提示。</p>
+      </div>
+
+      <div class="search-panel">
+        <label class="search-box">
+          <span>搜索知识点</span>
+          <input id="searchInput" type="search" placeholder="例如：协变量、收缩、模型辨识、VPC、Meta">
+        </label>
+        <div class="type-filters" id="typeFilters" aria-label="节点类型筛选"></div>
+      </div>
+
+      <div class="explorer-layout">
+        <div class="graph-shell">
+          <svg id="graphSvg" viewBox="0 0 1180 760" role="img" aria-label="可视化知识图谱"></svg>
+        </div>
+        <aside class="node-panel" id="nodePanel">
+          <p class="eyebrow">Node detail</p>
+          <h3>点击一个节点</h3>
+          <p>这里会显示概念解释、所在章节和相邻关系。</p>
+        </aside>
+      </div>
+
+      <div class="result-strip" id="resultStrip" aria-live="polite"></div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="section-heading">
+        <p class="eyebrow">Project checklist</p>
+        <h2>做 PopPK 项目时怎么用它</h2>
+        <p>把图谱变成建模 checklist。每完成一项，就能减少一次“模型显著但不可信”的风险。</p>
+      </div>
+      <div class="checklist-grid" id="checklistGrid"></div>
+    </section>
+
+    <section class="section github-section" id="github">
+      <div>
+        <p class="eyebrow">Publish</p>
+        <h2>放到 GitHub Pages</h2>
+        <p>
+          当前目录已经是 GitHub Pages 友好的纯静态站点。你只需要把
+          <code>poppk-knowledge-site</code> 上传到 GitHub 仓库，然后在 Pages 设置中选择分支即可。
+        </p>
+      </div>
+      <div class="deploy-card">
+        <h3>推荐部署方式</h3>
+        <ol>
+          <li>新建仓库，例如 <code>poppk-learning-map</code>。</li>
+          <li>上传本目录全部文件：<code>index.html</code>、<code>assets/</code>、<code>data/</code>、<code>.nojekyll</code>。</li>
+          <li>进入仓库 <code>Settings → Pages</code>。</li>
+          <li>Source 选择 <code>Deploy from a branch</code>，分支选 <code>main</code>，目录选 <code>/root</code>。</li>
+          <li>几分钟后访问 GitHub 给出的 Pages 链接，手机也能直接打开。</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>PopPK Learning Map</span>
+    <span>基于本地知识图谱 JSON 构建，不包含书籍正文长段摘录。</span>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

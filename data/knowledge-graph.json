@@ -1,0 +1,2179 @@
+{
+  "title": "群体药动学和药效学分析进阶：知识图谱",
+  "source_pdf": "G:\\G---文件\\个人\\指南\\群体药动学和药效学分析进阶_焦正主编_2022年（超清）.pdf",
+  "notes": [
+    "页码来自PDF内置目录页码；与书内印刷页码可能存在前置页偏移。",
+    "图谱为结构化概括，不包含正文长段摘录。"
+  ],
+  "nodes": [
+    {
+      "id": "book",
+      "label": "群体药动学和药效学分析进阶",
+      "type": "book",
+      "summary": "以群体药动学/药效学高级建模为中心，覆盖常见问题、复杂机制模型和扩展应用。",
+      "source_pdf": "G:\\G---文件\\个人\\指南\\群体药动学和药效学分析进阶_焦正主编_2022年（超清）.pdf"
+    },
+    {
+      "id": "workflow",
+      "label": "群体PK/PD建模工作流",
+      "type": "workflow",
+      "summary": "从研究问题到数据、模型、估计、评价和应用的闭环。"
+    },
+    {
+      "id": "part_foundation",
+      "label": "概论和常见问题",
+      "type": "module",
+      "summary": "建模语言、数据质量、可辨识性、变异结构和诊断解释，是群体PK/PD分析的基本盘。"
+    },
+    {
+      "id": "part_complex",
+      "label": "复杂机制模型",
+      "type": "module",
+      "summary": "用机制结构解释非线性、滞后、再循环和效应周转，增强模型的生理/药理可解释性。"
+    },
+    {
+      "id": "part_application",
+      "label": "扩展应用模型",
+      "type": "module",
+      "summary": "把PK/PD建模扩展到细胞、生理节律、疾病进程、病毒、事件终点和跨研究证据整合。"
+    },
+    {
+      "id": "c01",
+      "label": "第一章 概述",
+      "type": "chapter",
+      "summary": "建立数学模型与PK-PD建模的基本语义，说明模型定义、属性、分类和应用场景。",
+      "pages": "25-33",
+      "module": "part_foundation"
+    },
+    {
+      "id": "c02",
+      "label": "第二章 模型辨识",
+      "type": "chapter",
+      "summary": "回答模型参数是否能被数据唯一、稳定支持的问题，区分结构可辨识性与数值可辨识性。",
+      "pages": "34-40",
+      "module": "part_foundation"
+    },
+    {
+      "id": "c03",
+      "label": "第三章 优化采样设计",
+      "type": "chapter",
+      "summary": "在有限采样条件下选择最有信息量的采样时间，服务个体化估计和试验设计。",
+      "pages": "41-64",
+      "module": "part_foundation"
+    },
+    {
+      "id": "c04",
+      "label": "第四章 低于定量下限数据的分析",
+      "type": "chapter",
+      "summary": "处理BQL数据对参数估计和模型评价的影响，比较简单处理法与基于似然的方法。",
+      "pages": "65-86",
+      "module": "part_foundation"
+    },
+    {
+      "id": "c05",
+      "label": "第五章 场合间变异模型",
+      "type": "chapter",
+      "summary": "将同一受试者在不同给药、访视或场合中的参数差异显式建模。",
+      "pages": "87-94",
+      "module": "part_foundation"
+    },
+    {
+      "id": "c06",
+      "label": "第六章 混合分布模型",
+      "type": "chapter",
+      "summary": "用潜在亚群和类别概率解释参数分布异质性。",
+      "pages": "95-101",
+      "module": "part_foundation"
+    },
+    {
+      "id": "c07",
+      "label": "第七章 收缩",
+      "type": "chapter",
+      "summary": "解释ETA/EPS收缩的定义、成因及其对诊断图、协变量筛选和个体参数解释的影响。",
+      "pages": "102-118",
+      "module": "part_foundation"
+    },
+    {
+      "id": "c08",
+      "label": "第八章 肠肝循环模型",
+      "type": "chapter",
+      "summary": "用循环释放、再吸收和胆囊/肠道过程描述二峰或再循环现象。",
+      "pages": "119-139",
+      "module": "part_complex"
+    },
+    {
+      "id": "c09",
+      "label": "第九章 靶点介导的药物处置模型",
+      "type": "chapter",
+      "summary": "描述药物与靶点结合、复合物内化/降解和靶点周转造成的非线性药动学。",
+      "pages": "140-171",
+      "module": "part_complex"
+    },
+    {
+      "id": "c10",
+      "label": "第十章 转移室模型",
+      "type": "chapter",
+      "summary": "通过串联转移室描述吸收或效应延迟，用比单纯滞后时间更平滑的结构表达时间分布。",
+      "pages": "172-188",
+      "module": "part_complex"
+    },
+    {
+      "id": "c11",
+      "label": "第十一章 效应室模型",
+      "type": "chapter",
+      "summary": "用效应室连接血浆浓度与效应，解释浓度-效应滞后和滞回现象。",
+      "pages": "189-200",
+      "module": "part_complex"
+    },
+    {
+      "id": "c12",
+      "label": "第十二章 间接效应模型",
+      "type": "chapter",
+      "summary": "以反应生成和消除速率为核心，表达药物对生物标志物或效应周转过程的刺激/抑制作用。",
+      "pages": "201-214",
+      "module": "part_complex"
+    },
+    {
+      "id": "c13",
+      "label": "第十三章 细胞生命周期模型",
+      "type": "chapter",
+      "summary": "将细胞增殖、成熟、衰亡等生命周期过程纳入PK-PD建模。",
+      "pages": "215-227",
+      "module": "part_application"
+    },
+    {
+      "id": "c14",
+      "label": "第十四章 生理节律模型",
+      "type": "chapter",
+      "summary": "把昼夜节律或周期性生理波动纳入模型，避免将时间节律误判为药物效应。",
+      "pages": "228-246",
+      "module": "part_application"
+    },
+    {
+      "id": "c15",
+      "label": "第十五章 疾病进程模型",
+      "type": "chapter",
+      "summary": "刻画疾病自然进展及治疗干预对进程的改变，支持长期疗效预测与试验设计。",
+      "pages": "247-265",
+      "module": "part_application"
+    },
+    {
+      "id": "c16",
+      "label": "第十六章 病毒动力学模型",
+      "type": "chapter",
+      "summary": "用靶细胞、病毒复制、药物抑制、免疫反应和耐药突变描述感染过程及抗病毒治疗效果。",
+      "pages": "266-288",
+      "module": "part_application"
+    },
+    {
+      "id": "c17",
+      "label": "第十七章 生存分析模型",
+      "type": "chapter",
+      "summary": "将时间-事件终点与PK暴露和协变量连接，用风险函数和生存模型支持疗效或安全性分析。",
+      "pages": "289-317",
+      "module": "part_application"
+    },
+    {
+      "id": "c18",
+      "label": "第十八章 基于模型的Meta分析",
+      "type": "chapter",
+      "summary": "整合文献级或研究级证据，通过模型进行剂量-反应、试验设计、研发决策和临床用药支持。",
+      "pages": "318-344",
+      "module": "part_application"
+    },
+    {
+      "id": "math_model",
+      "label": "数学模型",
+      "type": "concept",
+      "summary": "用数学关系抽象真实系统，是药动学/药效学定量分析的基础表达。"
+    },
+    {
+      "id": "pkpd_model",
+      "label": "药动学-药效学建模",
+      "type": "concept",
+      "summary": "连接给药、暴露和反应，解释浓度-效应关系及其时间过程。"
+    },
+    {
+      "id": "modeling_workflow",
+      "label": "数学建模流程",
+      "type": "workflow",
+      "summary": "从问题定义、假设、结构表达、估计、评价到应用的建模活动。"
+    },
+    {
+      "id": "model_application",
+      "label": "模型应用",
+      "type": "application",
+      "summary": "用于剂量优化、试验设计、疗效/安全性预测和临床决策。"
+    },
+    {
+      "id": "model_identifiability",
+      "label": "模型辨识",
+      "type": "method",
+      "summary": "判断模型结构和参数是否能被数据支持，是可靠估计的前置条件。"
+    },
+    {
+      "id": "structural_identifiability",
+      "label": "结构可辨识性",
+      "type": "method",
+      "summary": "在理想无噪声数据下，参数是否能由模型输出唯一确定。"
+    },
+    {
+      "id": "numerical_identifiability",
+      "label": "数值可辨识性",
+      "type": "method",
+      "summary": "在实际数据、噪声和估计算法条件下，参数是否稳定可估。"
+    },
+    {
+      "id": "parameter_estimation",
+      "label": "参数估算",
+      "type": "workflow",
+      "summary": "用观测数据估计典型值、变异和残差误差。"
+    },
+    {
+      "id": "optimal_sampling",
+      "label": "优化采样设计",
+      "type": "method",
+      "summary": "在采样数量受限时选择信息量最高的时间点或方案。"
+    },
+    {
+      "id": "mlr",
+      "label": "多元线性模型",
+      "type": "method",
+      "summary": "用于稀疏采样设计和暴露指标预测的一类线性建模方法。"
+    },
+    {
+      "id": "map_bayes",
+      "label": "最大后验贝叶斯法",
+      "type": "method",
+      "summary": "利用群体先验和个体观测进行个体参数或暴露估计。"
+    },
+    {
+      "id": "fim",
+      "label": "费歇尔信息矩阵",
+      "type": "method",
+      "summary": "量化设计对参数估计精度的信息量，是D优化等准则基础。"
+    },
+    {
+      "id": "d_optimal",
+      "label": "D优化设计",
+      "type": "method",
+      "summary": "通过最大化信息矩阵行列式提升整体参数估计精度。"
+    },
+    {
+      "id": "design_comparison",
+      "label": "采样设计比较",
+      "type": "evaluation",
+      "summary": "比较不同设计对估计偏倚、精度和可实施性的影响。"
+    },
+    {
+      "id": "bql",
+      "label": "低于定量下限数据",
+      "type": "data",
+      "summary": "浓度低于定量下限的观测，若处理不当会引入估计偏倚。"
+    },
+    {
+      "id": "simple_bql_method",
+      "label": "BQL简单处理法",
+      "type": "method",
+      "summary": "删除、置零或置为LLOQ比例值等便捷处理，但可能损失信息或造成偏倚。"
+    },
+    {
+      "id": "likelihood_bql",
+      "label": "BQL似然法",
+      "type": "method",
+      "summary": "把BQL作为区间/概率信息纳入似然，通常比简单替代更能保留信息。"
+    },
+    {
+      "id": "data_structure",
+      "label": "数据结构",
+      "type": "data",
+      "summary": "建模数据集的ID、时间、剂量、观测、事件和协变量编码方式。"
+    },
+    {
+      "id": "vpc",
+      "label": "可视化预测检验",
+      "type": "evaluation",
+      "summary": "用模拟预测区间与观测分布对比评估模型预测能力。"
+    },
+    {
+      "id": "npde",
+      "label": "正态化预测分布误差",
+      "type": "evaluation",
+      "summary": "基于模拟分布转换观测偏差，用于模型诊断。"
+    },
+    {
+      "id": "sse",
+      "label": "模拟再估计法",
+      "type": "evaluation",
+      "summary": "通过重复模拟和再估计检验设计、模型和估计流程稳健性。"
+    },
+    {
+      "id": "occasion",
+      "label": "场合",
+      "type": "data",
+      "summary": "同一受试者的不同访视、周期、给药或生理状态场景。"
+    },
+    {
+      "id": "iov",
+      "label": "场合间变异",
+      "type": "concept",
+      "summary": "同一个体在不同场合之间的参数随机波动。"
+    },
+    {
+      "id": "within_subject_variability",
+      "label": "个体内变异",
+      "type": "concept",
+      "summary": "同一受试者内部随时间或场景变化产生的差异。"
+    },
+    {
+      "id": "variability_model",
+      "label": "变异模型",
+      "type": "method",
+      "summary": "同时表达个体间、个体内、场合间和残差层面的随机变异。"
+    },
+    {
+      "id": "mixture_model",
+      "label": "混合分布模型",
+      "type": "method",
+      "summary": "用多个潜在分布或亚群解释总体参数异质性。"
+    },
+    {
+      "id": "subpopulation",
+      "label": "亚群",
+      "type": "concept",
+      "summary": "具有不同参数特征或机制假设的潜在群体。"
+    },
+    {
+      "id": "class_probability",
+      "label": "类别概率",
+      "type": "parameter",
+      "summary": "个体属于某潜在亚群的概率。"
+    },
+    {
+      "id": "latent_class",
+      "label": "潜在类别",
+      "type": "concept",
+      "summary": "未直接观测但可由数据支持的分类结构。"
+    },
+    {
+      "id": "shrinkage",
+      "label": "收缩",
+      "type": "diagnostic",
+      "summary": "个体估计值向群体典型值或残差向零靠拢的现象。"
+    },
+    {
+      "id": "eta_shrinkage",
+      "label": "ETA收缩",
+      "type": "diagnostic",
+      "summary": "个体随机效应估计不充分时向零收缩，影响个体参数解释。"
+    },
+    {
+      "id": "eps_shrinkage",
+      "label": "EPS收缩",
+      "type": "diagnostic",
+      "summary": "残差层面信息不足导致诊断残差被压缩。"
+    },
+    {
+      "id": "ebe",
+      "label": "个体贝叶斯估计",
+      "type": "parameter",
+      "summary": "基于群体先验和个体数据得到的个体参数估计。"
+    },
+    {
+      "id": "diagnostics",
+      "label": "诊断解释",
+      "type": "evaluation",
+      "summary": "对拟合图、残差图、协变量关系和预测检验结果进行可靠解读。"
+    },
+    {
+      "id": "covariate_model",
+      "label": "协变量模型",
+      "type": "method",
+      "summary": "把体重、年龄、基因型、暴露或临床特征等纳入参数或风险解释。"
+    },
+    {
+      "id": "ehc",
+      "label": "肠肝循环",
+      "type": "mechanism",
+      "summary": "药物经胆汁排泄进入肠道后再吸收，导致暴露曲线出现再循环特征。"
+    },
+    {
+      "id": "recirculation",
+      "label": "再循环",
+      "type": "mechanism",
+      "summary": "药物从中心循环到排泄/储存部位后再次进入系统循环。"
+    },
+    {
+      "id": "biliary_excretion",
+      "label": "胆汁排泄",
+      "type": "mechanism",
+      "summary": "肠肝循环的关键生理过程之一。"
+    },
+    {
+      "id": "bidirectional_compartment",
+      "label": "双向房室模型",
+      "type": "model",
+      "summary": "用双向连接房室描述再循环或交换过程。"
+    },
+    {
+      "id": "gallbladder_compartment",
+      "label": "胆囊室模型",
+      "type": "model",
+      "summary": "将胆囊作为释放/储存室描述胆汁相关再循环。"
+    },
+    {
+      "id": "tmdd",
+      "label": "靶点介导的药物处置",
+      "type": "model",
+      "summary": "药物与靶点结合导致非线性清除和暴露变化的机制模型。"
+    },
+    {
+      "id": "target_binding",
+      "label": "靶点结合",
+      "type": "mechanism",
+      "summary": "药物与受体/靶点结合形成复合物的过程。"
+    },
+    {
+      "id": "receptor_turnover",
+      "label": "受体周转",
+      "type": "mechanism",
+      "summary": "靶点合成、降解和内化过程影响TMDD动力学。"
+    },
+    {
+      "id": "drug_target_complex",
+      "label": "药物-靶点复合物",
+      "type": "mechanism",
+      "summary": "TMDD模型中的结合产物，影响清除、分布和效应。"
+    },
+    {
+      "id": "nonlinear_pk",
+      "label": "非线性药动学",
+      "type": "concept",
+      "summary": "剂量或浓度变化导致清除、分布或暴露不成比例变化。"
+    },
+    {
+      "id": "qss",
+      "label": "准稳态近似",
+      "type": "method",
+      "summary": "对TMDD复杂结构进行简化估计的一类近似方法。"
+    },
+    {
+      "id": "mab",
+      "label": "单克隆抗体",
+      "type": "application",
+      "summary": "TMDD和FcRn循环模型常见应用对象。"
+    },
+    {
+      "id": "fcrn",
+      "label": "FcRn循环模型",
+      "type": "model",
+      "summary": "解释抗体回收、保护和长半衰期的重要机制模型。"
+    },
+    {
+      "id": "transit_compartment",
+      "label": "转移室模型",
+      "type": "model",
+      "summary": "用串联室表达延迟分布，常用于吸收或生理传递过程。"
+    },
+    {
+      "id": "absorption_delay",
+      "label": "吸收延迟",
+      "type": "mechanism",
+      "summary": "给药后药物进入系统循环前的时间分布。"
+    },
+    {
+      "id": "lag_time",
+      "label": "滞后时间模型",
+      "type": "model",
+      "summary": "用固定延迟描述吸收/效应延后，结构简单但不够平滑。"
+    },
+    {
+      "id": "stirling_approximation",
+      "label": "斯特林近似",
+      "type": "method",
+      "summary": "用于转移室数量较多时近似计算转移时间分布。"
+    },
+    {
+      "id": "multiple_dosing",
+      "label": "多剂量给药",
+      "type": "application",
+      "summary": "需要处理累积、稳态和时间相关延迟的给药场景。"
+    },
+    {
+      "id": "effect_compartment",
+      "label": "效应室模型",
+      "type": "model",
+      "summary": "通过假想效应室解释血浆浓度与效应部位浓度之间的延迟。"
+    },
+    {
+      "id": "hysteresis",
+      "label": "滞回现象",
+      "type": "diagnostic",
+      "summary": "浓度-效应曲线出现环状关系，提示时间延迟或耐受等机制。"
+    },
+    {
+      "id": "ke0",
+      "label": "效应室平衡速率常数",
+      "type": "parameter",
+      "summary": "决定血浆室与效应室之间平衡速度的参数。"
+    },
+    {
+      "id": "exposure_response",
+      "label": "暴露-效应模型",
+      "type": "model",
+      "summary": "描述暴露指标与疗效/安全性终点的定量关系。"
+    },
+    {
+      "id": "pkpd_link",
+      "label": "PK-PD链接",
+      "type": "workflow",
+      "summary": "把药动学暴露与药效、事件或疾病终点连接。"
+    },
+    {
+      "id": "indirect_response",
+      "label": "间接效应模型",
+      "type": "model",
+      "summary": "药物通过影响响应生成或消除速率间接改变效应。"
+    },
+    {
+      "id": "turnover_model",
+      "label": "周转模型",
+      "type": "model",
+      "summary": "用输入/输出速率描述生物标志物或效应变量的动态平衡。"
+    },
+    {
+      "id": "production_rate",
+      "label": "生成速率",
+      "type": "parameter",
+      "summary": "间接效应/周转模型中的响应产生项。"
+    },
+    {
+      "id": "loss_rate",
+      "label": "消除速率",
+      "type": "parameter",
+      "summary": "间接效应/周转模型中的响应移除项。"
+    },
+    {
+      "id": "stimulation",
+      "label": "刺激作用",
+      "type": "mechanism",
+      "summary": "药物增强生成或抑制消除造成响应升高。"
+    },
+    {
+      "id": "inhibition",
+      "label": "抑制作用",
+      "type": "mechanism",
+      "summary": "药物抑制生成或增强消除造成响应降低。"
+    },
+    {
+      "id": "response_delay",
+      "label": "响应延迟",
+      "type": "mechanism",
+      "summary": "效应变化滞后于暴露变化的动态现象。"
+    },
+    {
+      "id": "cell_lifespan",
+      "label": "细胞生命周期模型",
+      "type": "model",
+      "summary": "把细胞寿命、成熟和衰亡过程纳入效应建模。"
+    },
+    {
+      "id": "cell_maturation",
+      "label": "细胞成熟",
+      "type": "mechanism",
+      "summary": "细胞从前体到成熟状态的转移过程。"
+    },
+    {
+      "id": "cell_proliferation",
+      "label": "细胞增殖",
+      "type": "mechanism",
+      "summary": "细胞数量增长或前体扩增过程。"
+    },
+    {
+      "id": "cell_death",
+      "label": "细胞死亡",
+      "type": "mechanism",
+      "summary": "细胞清除、凋亡或寿命终点过程。"
+    },
+    {
+      "id": "lifespan_distribution",
+      "label": "寿命分布",
+      "type": "parameter",
+      "summary": "细胞寿命差异的分布表达。"
+    },
+    {
+      "id": "circadian_rhythm",
+      "label": "生理节律",
+      "type": "mechanism",
+      "summary": "生理指标随昼夜或其他周期规律波动。"
+    },
+    {
+      "id": "rhythm_model",
+      "label": "节律模型",
+      "type": "model",
+      "summary": "用周期函数和基线结构描述时间相关波动。"
+    },
+    {
+      "id": "cosinor",
+      "label": "Cosinor模型",
+      "type": "model",
+      "summary": "常用余弦函数描述节律的振幅、相位和周期。"
+    },
+    {
+      "id": "abpm",
+      "label": "24h动态血压监测",
+      "type": "data",
+      "summary": "用于观察昼夜血压节律的连续监测数据。"
+    },
+    {
+      "id": "dipper_pattern",
+      "label": "杓型/非杓型节律",
+      "type": "diagnostic",
+      "summary": "血压等指标的昼夜下降模式分类。"
+    },
+    {
+      "id": "baseline_model",
+      "label": "基线模型",
+      "type": "model",
+      "summary": "描述无药物或初始状态下的指标水平与时间趋势。"
+    },
+    {
+      "id": "disease_progression",
+      "label": "疾病进程模型",
+      "type": "model",
+      "summary": "描述疾病自然进展及治疗对进程的影响。"
+    },
+    {
+      "id": "symptomatic_effect",
+      "label": "缓解型作用",
+      "type": "mechanism",
+      "summary": "改善症状但不改变疾病长期进程的治疗效应。"
+    },
+    {
+      "id": "disease_modifying_effect",
+      "label": "改善型作用",
+      "type": "mechanism",
+      "summary": "改变疾病进展速率或长期轨迹的治疗效应。"
+    },
+    {
+      "id": "cure_effect",
+      "label": "治愈型作用",
+      "type": "mechanism",
+      "summary": "使疾病进程停止或终止的效应假设。"
+    },
+    {
+      "id": "linear_progression",
+      "label": "线性进程模型",
+      "type": "model",
+      "summary": "用线性时间趋势表达疾病进展。"
+    },
+    {
+      "id": "asymptotic_model",
+      "label": "渐近线模型",
+      "type": "model",
+      "summary": "用趋近平台的非线性趋势描述疾病进程。"
+    },
+    {
+      "id": "placebo_effect",
+      "label": "安慰剂效应",
+      "type": "mechanism",
+      "summary": "疾病进程和治疗效应建模中需要分离的非药物响应。"
+    },
+    {
+      "id": "viral_dynamics",
+      "label": "病毒动力学模型",
+      "type": "model",
+      "summary": "描述病毒复制、清除、感染靶细胞和治疗干预的动态模型。"
+    },
+    {
+      "id": "target_cell_model",
+      "label": "靶细胞模型",
+      "type": "model",
+      "summary": "以未感染/感染靶细胞和病毒粒子为核心状态变量。"
+    },
+    {
+      "id": "drug_intervention",
+      "label": "药物干预模型",
+      "type": "model",
+      "summary": "把抗病毒药物对感染、复制或清除的影响纳入病毒动力学。"
+    },
+    {
+      "id": "immune_model",
+      "label": "免疫模型",
+      "type": "model",
+      "summary": "加入免疫反应对病毒清除或感染控制的贡献。"
+    },
+    {
+      "id": "resistance_mutation",
+      "label": "耐药突变动力学",
+      "type": "model",
+      "summary": "描述敏感株和耐药株随治疗选择压力变化。"
+    },
+    {
+      "id": "viral_load",
+      "label": "病毒载量",
+      "type": "data",
+      "summary": "病毒动力学模型的常见观测终点。"
+    },
+    {
+      "id": "survival_analysis",
+      "label": "生存分析模型",
+      "type": "model",
+      "summary": "分析从起点到事件发生时间的数据，支持疗效和安全性终点建模。"
+    },
+    {
+      "id": "time_to_event",
+      "label": "时间-事件数据",
+      "type": "data",
+      "summary": "记录事件发生时间、删失和风险集的信息。"
+    },
+    {
+      "id": "hazard_function",
+      "label": "风险函数",
+      "type": "parameter",
+      "summary": "给定尚未发生事件时瞬时发生事件的风险。"
+    },
+    {
+      "id": "kaplan_meier",
+      "label": "Kaplan-Meier法",
+      "type": "method",
+      "summary": "非参数估计生存函数的常用方法。"
+    },
+    {
+      "id": "cox_model",
+      "label": "Cox回归模型",
+      "type": "method",
+      "summary": "半参数比例风险模型，可连接协变量与事件风险。"
+    },
+    {
+      "id": "parametric_survival",
+      "label": "参数生存模型",
+      "type": "method",
+      "summary": "用Weibull、Gompertz、对数正态等分布描述事件时间。"
+    },
+    {
+      "id": "mbma",
+      "label": "基于模型的Meta分析",
+      "type": "model",
+      "summary": "用模型整合多研究证据并进行跨试验推断。"
+    },
+    {
+      "id": "evidence_integration",
+      "label": "证据整合",
+      "type": "workflow",
+      "summary": "汇总文献、试验和真实世界数据以支持模型化推断。"
+    },
+    {
+      "id": "literature_search",
+      "label": "文献检索",
+      "type": "workflow",
+      "summary": "系统识别可纳入MBMA的数据来源。"
+    },
+    {
+      "id": "data_extraction",
+      "label": "数据提取",
+      "type": "workflow",
+      "summary": "从研究报告中结构化提取剂量、终点、时间和协变量。"
+    },
+    {
+      "id": "dose_response",
+      "label": "剂量-反应关系",
+      "type": "model",
+      "summary": "连接剂量或暴露与疗效/安全性响应。"
+    },
+    {
+      "id": "trial_design",
+      "label": "临床试验设计",
+      "type": "application",
+      "summary": "用模拟和模型预测优化样本量、剂量、终点和入排标准。"
+    },
+    {
+      "id": "decision_making",
+      "label": "决策制定",
+      "type": "application",
+      "summary": "把模型推断转化为研发、审评或临床用药决策。"
+    },
+    {
+      "id": "wf_question",
+      "label": "研究问题",
+      "type": "workflow",
+      "summary": "明确要解释、预测或决策的问题。"
+    },
+    {
+      "id": "wf_data",
+      "label": "数据与设计",
+      "type": "workflow",
+      "summary": "确定采样、终点、BQL处理、事件记录和协变量。"
+    },
+    {
+      "id": "wf_structure",
+      "label": "结构模型",
+      "type": "workflow",
+      "summary": "选择房室、机制、进程、事件或Meta分析结构。"
+    },
+    {
+      "id": "wf_statistics",
+      "label": "统计模型",
+      "type": "workflow",
+      "summary": "设置随机效应、残差、IOV、混合分布和协变量。"
+    },
+    {
+      "id": "wf_estimation",
+      "label": "估计与辨识",
+      "type": "workflow",
+      "summary": "检查可辨识性并进行参数估算。"
+    },
+    {
+      "id": "wf_evaluation",
+      "label": "评价与诊断",
+      "type": "workflow",
+      "summary": "通过VPC、NPDE、SSE、残差和外部信息判断可靠性。"
+    },
+    {
+      "id": "wf_application",
+      "label": "预测与应用",
+      "type": "workflow",
+      "summary": "用于剂量、试验设计、临床决策和研发证据整合。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "book",
+      "target": "workflow",
+      "relation": "抽象为",
+      "detail": "全书内容可归纳为一个迭代建模工作流。"
+    },
+    {
+      "source": "book",
+      "target": "part_foundation",
+      "relation": "包含",
+      "detail": "三大知识模块之一。"
+    },
+    {
+      "source": "book",
+      "target": "part_complex",
+      "relation": "包含",
+      "detail": "三大知识模块之一。"
+    },
+    {
+      "source": "book",
+      "target": "part_application",
+      "relation": "包含",
+      "detail": "三大知识模块之一。"
+    },
+    {
+      "source": "part_foundation",
+      "target": "c01",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c01",
+      "target": "math_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c01",
+      "target": "pkpd_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c01",
+      "target": "modeling_workflow",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c01",
+      "target": "model_application",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_foundation",
+      "target": "c02",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c02",
+      "target": "model_identifiability",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c02",
+      "target": "structural_identifiability",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c02",
+      "target": "numerical_identifiability",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c02",
+      "target": "parameter_estimation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_foundation",
+      "target": "c03",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c03",
+      "target": "optimal_sampling",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c03",
+      "target": "mlr",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c03",
+      "target": "map_bayes",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c03",
+      "target": "fim",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c03",
+      "target": "d_optimal",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c03",
+      "target": "design_comparison",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_foundation",
+      "target": "c04",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c04",
+      "target": "bql",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c04",
+      "target": "simple_bql_method",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c04",
+      "target": "likelihood_bql",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c04",
+      "target": "data_structure",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c04",
+      "target": "vpc",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c04",
+      "target": "npde",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c04",
+      "target": "sse",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_foundation",
+      "target": "c05",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c05",
+      "target": "occasion",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c05",
+      "target": "iov",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c05",
+      "target": "within_subject_variability",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c05",
+      "target": "variability_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_foundation",
+      "target": "c06",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c06",
+      "target": "mixture_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c06",
+      "target": "subpopulation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c06",
+      "target": "class_probability",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c06",
+      "target": "latent_class",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_foundation",
+      "target": "c07",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c07",
+      "target": "shrinkage",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c07",
+      "target": "eta_shrinkage",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c07",
+      "target": "eps_shrinkage",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c07",
+      "target": "ebe",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c07",
+      "target": "diagnostics",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c07",
+      "target": "covariate_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_complex",
+      "target": "c08",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c08",
+      "target": "ehc",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c08",
+      "target": "recirculation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c08",
+      "target": "biliary_excretion",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c08",
+      "target": "bidirectional_compartment",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c08",
+      "target": "gallbladder_compartment",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_complex",
+      "target": "c09",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c09",
+      "target": "tmdd",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c09",
+      "target": "target_binding",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c09",
+      "target": "receptor_turnover",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c09",
+      "target": "drug_target_complex",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c09",
+      "target": "nonlinear_pk",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c09",
+      "target": "qss",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c09",
+      "target": "mab",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c09",
+      "target": "fcrn",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_complex",
+      "target": "c10",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c10",
+      "target": "transit_compartment",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c10",
+      "target": "absorption_delay",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c10",
+      "target": "lag_time",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c10",
+      "target": "stirling_approximation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c10",
+      "target": "multiple_dosing",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_complex",
+      "target": "c11",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c11",
+      "target": "effect_compartment",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c11",
+      "target": "hysteresis",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c11",
+      "target": "ke0",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c11",
+      "target": "exposure_response",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c11",
+      "target": "pkpd_link",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_complex",
+      "target": "c12",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c12",
+      "target": "indirect_response",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c12",
+      "target": "turnover_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c12",
+      "target": "production_rate",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c12",
+      "target": "loss_rate",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c12",
+      "target": "stimulation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c12",
+      "target": "inhibition",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c12",
+      "target": "response_delay",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_application",
+      "target": "c13",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c13",
+      "target": "cell_lifespan",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c13",
+      "target": "cell_maturation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c13",
+      "target": "cell_proliferation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c13",
+      "target": "cell_death",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c13",
+      "target": "lifespan_distribution",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_application",
+      "target": "c14",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c14",
+      "target": "circadian_rhythm",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c14",
+      "target": "rhythm_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c14",
+      "target": "cosinor",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c14",
+      "target": "abpm",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c14",
+      "target": "dipper_pattern",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c14",
+      "target": "baseline_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_application",
+      "target": "c15",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c15",
+      "target": "disease_progression",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c15",
+      "target": "symptomatic_effect",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c15",
+      "target": "disease_modifying_effect",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c15",
+      "target": "cure_effect",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c15",
+      "target": "linear_progression",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c15",
+      "target": "asymptotic_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c15",
+      "target": "placebo_effect",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_application",
+      "target": "c16",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c16",
+      "target": "viral_dynamics",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c16",
+      "target": "target_cell_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c16",
+      "target": "drug_intervention",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c16",
+      "target": "immune_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c16",
+      "target": "resistance_mutation",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c16",
+      "target": "viral_load",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_application",
+      "target": "c17",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c17",
+      "target": "survival_analysis",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c17",
+      "target": "time_to_event",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c17",
+      "target": "hazard_function",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c17",
+      "target": "kaplan_meier",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c17",
+      "target": "cox_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c17",
+      "target": "parametric_survival",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c17",
+      "target": "covariate_model",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c17",
+      "target": "pkpd_link",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "part_application",
+      "target": "c18",
+      "relation": "包含",
+      "detail": "章节属于该知识模块。"
+    },
+    {
+      "source": "c18",
+      "target": "mbma",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c18",
+      "target": "evidence_integration",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c18",
+      "target": "literature_search",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c18",
+      "target": "data_extraction",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c18",
+      "target": "dose_response",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c18",
+      "target": "trial_design",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "c18",
+      "target": "decision_making",
+      "relation": "覆盖",
+      "detail": "该概念是本章核心内容之一。"
+    },
+    {
+      "source": "workflow",
+      "target": "wf_question",
+      "relation": "包含步骤",
+      "detail": "建模工作流步骤。"
+    },
+    {
+      "source": "workflow",
+      "target": "wf_data",
+      "relation": "包含步骤",
+      "detail": "建模工作流步骤。"
+    },
+    {
+      "source": "workflow",
+      "target": "wf_structure",
+      "relation": "包含步骤",
+      "detail": "建模工作流步骤。"
+    },
+    {
+      "source": "workflow",
+      "target": "wf_statistics",
+      "relation": "包含步骤",
+      "detail": "建模工作流步骤。"
+    },
+    {
+      "source": "workflow",
+      "target": "wf_estimation",
+      "relation": "包含步骤",
+      "detail": "建模工作流步骤。"
+    },
+    {
+      "source": "workflow",
+      "target": "wf_evaluation",
+      "relation": "包含步骤",
+      "detail": "建模工作流步骤。"
+    },
+    {
+      "source": "workflow",
+      "target": "wf_application",
+      "relation": "包含步骤",
+      "detail": "建模工作流步骤。"
+    },
+    {
+      "source": "wf_question",
+      "target": "wf_data",
+      "relation": "流向",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "wf_data",
+      "target": "wf_structure",
+      "relation": "流向",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "wf_statistics",
+      "relation": "流向",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "wf_statistics",
+      "target": "wf_estimation",
+      "relation": "流向",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "wf_estimation",
+      "target": "wf_evaluation",
+      "relation": "流向",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "wf_application",
+      "relation": "迭代修正",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "wf_structure",
+      "relation": "迭代修正",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "wf_statistics",
+      "relation": "迭代修正",
+      "detail": "建模流程关系。"
+    },
+    {
+      "source": "math_model",
+      "target": "pkpd_model",
+      "relation": "支撑",
+      "detail": "数学模型提供PK-PD定量表达的语言。"
+    },
+    {
+      "source": "pkpd_model",
+      "target": "pkpd_link",
+      "relation": "建立",
+      "detail": "PK-PD建模的核心是连接暴露和效应。"
+    },
+    {
+      "source": "model_identifiability",
+      "target": "parameter_estimation",
+      "relation": "约束",
+      "detail": "不可辨识模型会导致参数估计不稳定或多解。"
+    },
+    {
+      "source": "structural_identifiability",
+      "target": "numerical_identifiability",
+      "relation": "先于",
+      "detail": "结构上可辨识后，再考察真实数据下的数值可辨识性。"
+    },
+    {
+      "source": "optimal_sampling",
+      "target": "fim",
+      "relation": "使用",
+      "detail": "优化采样通常依赖信息量准则。"
+    },
+    {
+      "source": "fim",
+      "target": "d_optimal",
+      "relation": "派生",
+      "detail": "D优化以信息矩阵行列式为目标。"
+    },
+    {
+      "source": "optimal_sampling",
+      "target": "map_bayes",
+      "relation": "支持",
+      "detail": "稀疏采样下可用群体先验进行个体化估计。"
+    },
+    {
+      "source": "bql",
+      "target": "likelihood_bql",
+      "relation": "推荐处理",
+      "detail": "BQL信息可通过似然进入模型，减少简单替代带来的偏倚。"
+    },
+    {
+      "source": "bql",
+      "target": "parameter_estimation",
+      "relation": "影响",
+      "detail": "BQL处理策略直接影响清除、暴露和残差参数。"
+    },
+    {
+      "source": "occasion",
+      "target": "iov",
+      "relation": "定义场景",
+      "detail": "IOV建模需要先定义场合。"
+    },
+    {
+      "source": "iov",
+      "target": "variability_model",
+      "relation": "扩展",
+      "detail": "IOV是总体变异结构的重要扩展。"
+    },
+    {
+      "source": "mixture_model",
+      "target": "subpopulation",
+      "relation": "识别",
+      "detail": "混合模型通过潜在亚群解释异质性。"
+    },
+    {
+      "source": "mixture_model",
+      "target": "class_probability",
+      "relation": "估计",
+      "detail": "类别概率决定个体属于各亚群的可能性。"
+    },
+    {
+      "source": "shrinkage",
+      "target": "ebe",
+      "relation": "影响",
+      "detail": "收缩过高时个体贝叶斯估计解释力下降。"
+    },
+    {
+      "source": "shrinkage",
+      "target": "diagnostics",
+      "relation": "影响",
+      "detail": "收缩会扭曲诊断图和协变量关系判断。"
+    },
+    {
+      "source": "ehc",
+      "target": "recirculation",
+      "relation": "表现为",
+      "detail": "肠肝循环体现为系统暴露中的再循环。"
+    },
+    {
+      "source": "biliary_excretion",
+      "target": "ehc",
+      "relation": "驱动",
+      "detail": "胆汁排泄是肠肝循环的重要生理环节。"
+    },
+    {
+      "source": "ehc",
+      "target": "gallbladder_compartment",
+      "relation": "可建模为",
+      "detail": "胆囊室可表示储存和释放。"
+    },
+    {
+      "source": "tmdd",
+      "target": "nonlinear_pk",
+      "relation": "解释",
+      "detail": "靶点结合和周转可导致非线性药动学。"
+    },
+    {
+      "source": "target_binding",
+      "target": "drug_target_complex",
+      "relation": "形成",
+      "detail": "药物与靶点结合形成复合物。"
+    },
+    {
+      "source": "receptor_turnover",
+      "target": "tmdd",
+      "relation": "决定",
+      "detail": "靶点合成、降解和内化控制TMDD动态。"
+    },
+    {
+      "source": "tmdd",
+      "target": "qss",
+      "relation": "可简化为",
+      "detail": "复杂TMDD结构可用近似模型降低估计难度。"
+    },
+    {
+      "source": "mab",
+      "target": "tmdd",
+      "relation": "常用",
+      "detail": "单抗等大分子药物常出现靶点介导处置。"
+    },
+    {
+      "source": "transit_compartment",
+      "target": "absorption_delay",
+      "relation": "描述",
+      "detail": "转移室用于表达吸收延迟分布。"
+    },
+    {
+      "source": "transit_compartment",
+      "target": "lag_time",
+      "relation": "替代/扩展",
+      "detail": "转移室比固定滞后时间更平滑。"
+    },
+    {
+      "source": "effect_compartment",
+      "target": "hysteresis",
+      "relation": "解释",
+      "detail": "效应室可解释浓度-效应滞回。"
+    },
+    {
+      "source": "ke0",
+      "target": "effect_compartment",
+      "relation": "参数化",
+      "detail": "ke0决定效应室平衡速度。"
+    },
+    {
+      "source": "indirect_response",
+      "target": "turnover_model",
+      "relation": "基于",
+      "detail": "间接效应以周转过程为核心。"
+    },
+    {
+      "source": "stimulation",
+      "target": "production_rate",
+      "relation": "作用于",
+      "detail": "刺激可增强响应生成。"
+    },
+    {
+      "source": "inhibition",
+      "target": "loss_rate",
+      "relation": "作用于",
+      "detail": "抑制/增强消除会改变响应下降或上升。"
+    },
+    {
+      "source": "cell_lifespan",
+      "target": "cell_maturation",
+      "relation": "包含",
+      "detail": "细胞生命周期模型常含成熟链条。"
+    },
+    {
+      "source": "cell_lifespan",
+      "target": "lifespan_distribution",
+      "relation": "参数化",
+      "detail": "细胞寿命差异可用分布表示。"
+    },
+    {
+      "source": "circadian_rhythm",
+      "target": "baseline_model",
+      "relation": "修正",
+      "detail": "基线节律建模可减少误把周期波动解释为药效。"
+    },
+    {
+      "source": "rhythm_model",
+      "target": "cosinor",
+      "relation": "常用",
+      "detail": "Cosinor是节律建模的常见函数形式。"
+    },
+    {
+      "source": "abpm",
+      "target": "circadian_rhythm",
+      "relation": "提供数据",
+      "detail": "24h动态血压监测可观察昼夜节律。"
+    },
+    {
+      "source": "disease_progression",
+      "target": "placebo_effect",
+      "relation": "区分",
+      "detail": "长期终点需分离自然进程、安慰剂效应和药物效应。"
+    },
+    {
+      "source": "disease_progression",
+      "target": "disease_modifying_effect",
+      "relation": "评估",
+      "detail": "疾病修饰效应关注进展速率或轨迹改变。"
+    },
+    {
+      "source": "viral_dynamics",
+      "target": "target_cell_model",
+      "relation": "基础结构",
+      "detail": "靶细胞模型是病毒动力学常见基础。"
+    },
+    {
+      "source": "drug_intervention",
+      "target": "viral_dynamics",
+      "relation": "改变",
+      "detail": "抗病毒药物通过抑制感染或复制改变病毒动力学。"
+    },
+    {
+      "source": "resistance_mutation",
+      "target": "drug_intervention",
+      "relation": "反馈",
+      "detail": "治疗选择压力会改变耐药株比例。"
+    },
+    {
+      "source": "survival_analysis",
+      "target": "time_to_event",
+      "relation": "分析",
+      "detail": "生存模型处理时间-事件终点。"
+    },
+    {
+      "source": "survival_analysis",
+      "target": "hazard_function",
+      "relation": "核心",
+      "detail": "风险函数是事件发生机制的核心量。"
+    },
+    {
+      "source": "cox_model",
+      "target": "covariate_model",
+      "relation": "连接",
+      "detail": "Cox模型常用于协变量对风险的解释。"
+    },
+    {
+      "source": "pkpd_link",
+      "target": "survival_analysis",
+      "relation": "扩展到",
+      "detail": "暴露或个体PK参数可进入风险模型。"
+    },
+    {
+      "source": "mbma",
+      "target": "evidence_integration",
+      "relation": "实现",
+      "detail": "MBMA通过模型整合多来源证据。"
+    },
+    {
+      "source": "literature_search",
+      "target": "data_extraction",
+      "relation": "先于",
+      "detail": "系统检索后进行结构化数据提取。"
+    },
+    {
+      "source": "mbma",
+      "target": "dose_response",
+      "relation": "常建模",
+      "detail": "剂量-反应是MBMA常见应用对象。"
+    },
+    {
+      "source": "mbma",
+      "target": "trial_design",
+      "relation": "支持",
+      "detail": "MBMA可为试验优化设计和决策提供依据。"
+    },
+    {
+      "source": "trial_design",
+      "target": "decision_making",
+      "relation": "服务于",
+      "detail": "试验模拟和优化结果用于研发与临床决策。"
+    },
+    {
+      "source": "wf_data",
+      "target": "optimal_sampling",
+      "relation": "涉及",
+      "detail": "数据与设计阶段需要处理该对象。"
+    },
+    {
+      "source": "wf_data",
+      "target": "data_structure",
+      "relation": "涉及",
+      "detail": "数据与设计阶段需要处理该对象。"
+    },
+    {
+      "source": "wf_data",
+      "target": "bql",
+      "relation": "涉及",
+      "detail": "数据与设计阶段需要处理该对象。"
+    },
+    {
+      "source": "wf_data",
+      "target": "abpm",
+      "relation": "涉及",
+      "detail": "数据与设计阶段需要处理该对象。"
+    },
+    {
+      "source": "wf_data",
+      "target": "viral_load",
+      "relation": "涉及",
+      "detail": "数据与设计阶段需要处理该对象。"
+    },
+    {
+      "source": "wf_data",
+      "target": "time_to_event",
+      "relation": "涉及",
+      "detail": "数据与设计阶段需要处理该对象。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "pkpd_model",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "ehc",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "tmdd",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "transit_compartment",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "effect_compartment",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "indirect_response",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "disease_progression",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "viral_dynamics",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "survival_analysis",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_structure",
+      "target": "mbma",
+      "relation": "选择/构建",
+      "detail": "结构模型阶段可选择该模型族。"
+    },
+    {
+      "source": "wf_statistics",
+      "target": "variability_model",
+      "relation": "设置",
+      "detail": "统计模型阶段处理该结构。"
+    },
+    {
+      "source": "wf_statistics",
+      "target": "iov",
+      "relation": "设置",
+      "detail": "统计模型阶段处理该结构。"
+    },
+    {
+      "source": "wf_statistics",
+      "target": "mixture_model",
+      "relation": "设置",
+      "detail": "统计模型阶段处理该结构。"
+    },
+    {
+      "source": "wf_statistics",
+      "target": "covariate_model",
+      "relation": "设置",
+      "detail": "统计模型阶段处理该结构。"
+    },
+    {
+      "source": "wf_estimation",
+      "target": "model_identifiability",
+      "relation": "使用/检查",
+      "detail": "估计阶段需要该方法或检查。"
+    },
+    {
+      "source": "wf_estimation",
+      "target": "parameter_estimation",
+      "relation": "使用/检查",
+      "detail": "估计阶段需要该方法或检查。"
+    },
+    {
+      "source": "wf_estimation",
+      "target": "map_bayes",
+      "relation": "使用/检查",
+      "detail": "估计阶段需要该方法或检查。"
+    },
+    {
+      "source": "wf_estimation",
+      "target": "qss",
+      "relation": "使用/检查",
+      "detail": "估计阶段需要该方法或检查。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "vpc",
+      "relation": "评价",
+      "detail": "评价阶段关注该诊断或检验。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "npde",
+      "relation": "评价",
+      "detail": "评价阶段关注该诊断或检验。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "sse",
+      "relation": "评价",
+      "detail": "评价阶段关注该诊断或检验。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "diagnostics",
+      "relation": "评价",
+      "detail": "评价阶段关注该诊断或检验。"
+    },
+    {
+      "source": "wf_evaluation",
+      "target": "shrinkage",
+      "relation": "评价",
+      "detail": "评价阶段关注该诊断或检验。"
+    },
+    {
+      "source": "wf_application",
+      "target": "model_application",
+      "relation": "服务",
+      "detail": "模型应用阶段输出该类结果。"
+    },
+    {
+      "source": "wf_application",
+      "target": "trial_design",
+      "relation": "服务",
+      "detail": "模型应用阶段输出该类结果。"
+    },
+    {
+      "source": "wf_application",
+      "target": "decision_making",
+      "relation": "服务",
+      "detail": "模型应用阶段输出该类结果。"
+    },
+    {
+      "source": "wf_application",
+      "target": "dose_response",
+      "relation": "服务",
+      "detail": "模型应用阶段输出该类结果。"
+    }
+  ]
+}
