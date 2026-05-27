@@ -42,44 +42,184 @@ const colors = {
 
 const lessons = [
   {
-    title: "1. 先理解 PopPK 在解决什么",
-    time: "5 分钟",
+    title: "第 1 课：PopPK 到底在解决什么",
+    time: "12 分钟",
+    level: "入门",
     nodes: ["pkpd_model", "math_model", "model_application"],
-    goal: "把给药、浓度、效应和个体差异放到同一套定量框架里。",
-    avoid: "不要一开始就陷入软件语法。先说清楚研究问题和模型要解释的临床现象。",
-    action: "写一句话研究问题：我想用氨磺必利模型解释或预测什么？",
+    goal: "理解 PopPK 的核心目标：用群体数据估计典型参数、个体差异和影响因素。",
+    learn: [
+      "为什么同一剂量下不同患者浓度差异很大。",
+      "CL、V、Ka、F、IIV、RUV 分别在模型中扮演什么角色。",
+      "PopPK 不是画曲线，而是回答剂量、暴露、变异和临床决策问题。",
+    ],
+    example: "氨磺必利项目的研究问题可以写成：在精神科患者中，肾功能和合并用药如何影响氨磺必利暴露，并能否支持剂量个体化？",
+    avoid: "不要一开始就写代码。先把研究问题、终点、模型用途和验收标准写清楚。",
+    action: "用一句话写出你的建模目的，并标注它属于解释、预测还是剂量决策。",
   },
   {
-    title: "2. 搭基础模型",
-    time: "8 分钟",
-    nodes: ["parameter_estimation", "model_identifiability", "variability_model"],
-    goal: "理解结构模型、随机效应和残差模型如何共同决定参数估计。",
-    avoid: "不要只追求 OFV 下降；不可辨识模型的 OFV 也可能很好看。",
-    action: "检查基础模型是否收敛、参数是否可识别、清除和分布是否生理合理。",
+    title: "第 2 课：数据长什么样，错误从哪里来",
+    time: "15 分钟",
+    level: "入门",
+    nodes: ["data_structure", "bql", "optimal_sampling"],
+    goal: "看懂 PopPK 数据表：ID、TIME、AMT、DV、EVID、CMT、协变量和 BQL。",
+    learn: [
+      "给药记录和浓度记录为什么必须共用时间轴。",
+      "BQL 不能随便删，因为它会影响低浓度段清除估计。",
+      "采样设计决定模型能不能识别吸收、清除和分布。",
+    ],
+    example: "氨磺必利数据要先核查采血时间是否相对给药时间正确，合并用药哑变量是否按患者或采样时点编码一致。",
+    avoid: "不要直接把宽表丢进模型；先确认长表结构、单位、缺失、异常值和 BQL 编码。",
+    action: "做一张数据审查表：样本数、患者数、每人浓度数、BQL 比例、剂量范围、eGFR 范围。",
   },
   {
-    title: "3. 做协变量筛选",
-    time: "7 分钟",
-    nodes: ["covariate_model", "shrinkage", "mixture_model", "iov"],
-    goal: "区分真实协变量效应、共线性、收缩导致的假趋势和合并用药混杂。",
-    avoid: "不要把每个变量都粗暴加到总清除率上；协变量要放到符合机制的位置。",
-    action: "先做缺失率、阳性人数、相关性和 shrinkage 预筛，再做 SCM。",
+    title: "第 3 课：基础结构模型怎么搭",
+    time: "18 分钟",
+    level: "核心",
+    nodes: ["parameter_estimation", "model_identifiability", "transit_compartment"],
+    goal: "理解一室/二室、吸收、清除、分布这些结构选择如何影响参数解释。",
+    learn: [
+      "一室模型不是低级模型，而是数据能支持时的稳健选择。",
+      "CL 决定暴露，V 决定浓度尺度，Ka 或延迟结构决定早期曲线形状。",
+      "结构越复杂，越需要数据支持和可辨识性检查。",
+    ],
+    example: "氨磺必利若采样点较稀疏，盲目上二室或复杂吸收结构可能导致参数不可识别。",
+    avoid: "不要因为 OFV 下降就接受复杂结构；先看参数 RSE、相关性、诊断图和生理范围。",
+    action: "列出候选基础模型，并为每个模型写出你预期它改善哪一段曲线。",
   },
   {
-    title: "4. 评价模型",
-    time: "6 分钟",
-    nodes: ["model_evaluation", "vpc", "npde", "diagnostics"],
-    goal: "确认模型不仅拟合成功，而且在浓度、时间和协变量分层下没有系统偏倚。",
-    avoid: "不要只看整体 GOF；低、中、高浓度段和关键协变量层也要看。",
-    action: "输出 GOF、VPC/pcVPC、CWRES 分层统计和协变量残留趋势图。",
+    title: "第 4 课：随机效应和残差误差",
+    time: "16 分钟",
+    level: "核心",
+    nodes: ["variability_model", "iov", "shrinkage", "ebe"],
+    goal: "理解 IIV、IOV、RUV 和 shrinkage，知道为什么它们会影响协变量判断。",
+    learn: [
+      "ETA 描述个体间变异，不是普通残差。",
+      "残差模型不合适会把结构错误伪装成随机噪声。",
+      "shrinkage 高时，ETA-covariate 图容易给出假趋势或看不出真趋势。",
+    ],
+    example: "若氨磺必利 CL 的 ETA shrinkage 很高，就不能单靠 CL ETA 与 eGFR/BUN 的散点图判断协变量。",
+    avoid: "不要把 EBE 图当成绝对证据；它只是提示，最终要靠模型和诊断共同判断。",
+    action: "输出基础模型 shrinkage，并标注哪些参数适合做协变量筛选。",
   },
   {
-    title: "5. 进入应用与论文表达",
-    time: "4 分钟",
-    nodes: ["trial_design", "decision_making", "dose_response", "mbma"],
-    goal: "把模型结果转化为剂量建议、试验设计依据或临床解释。",
-    avoid: "不要把统计显著直接写成临床重要；要报告效应大小和不确定性。",
-    action: "用模拟回答一个临床问题：某类患者是否需要剂量调整？",
+    title: "第 5 课：估计、收敛和可辨识性",
+    time: "18 分钟",
+    level: "核心",
+    nodes: ["model_identifiability", "structural_identifiability", "numerical_identifiability", "parameter_estimation"],
+    goal: "知道模型跑完不等于模型可信，学会看收敛、RSE、边界、相关矩阵和假收敛。",
+    learn: [
+      "结构可辨识性回答理论上能不能估，数值可辨识性回答当前数据能不能稳。",
+      "%RSE、condition number、参数相关性和协方差计算状态都要看。",
+      "false convergence 或参数贴边时，OFV 没有解释价值。",
+    ],
+    example: "协变量筛选前，氨磺必利基础模型必须先通过收敛、参数精度和 shrinkage 门槛。",
+    avoid: "不要让不稳定基础模型进入 SCM；后续所有协变量结论都会被污染。",
+    action: "给基础模型做一张验收表：收敛、OFV、RSE、shrinkage、诊断、参数生理范围。",
+  },
+  {
+    title: "第 6 课：协变量筛选怎么做才不乱",
+    time: "22 分钟",
+    level: "进阶",
+    nodes: ["covariate_model", "d_optimal", "mixture_model", "covariate_model"],
+    goal: "掌握协变量建模的原则：先预筛，再机制定位，再统计筛选，最后临床解释。",
+    learn: [
+      "连续协变量常用 log-centering，分类变量要看阳性人数。",
+      "SCM 的前向/后向阈值只是统计工具，不是最终真理。",
+      "协变量应该加到有机制意义的参数上，而不是全部塞进总 CL。",
+    ],
+    example: "氨磺必利中 eGFR 机制性进入 CLrenal，合并用药主分析放在非 eGFR 解释清除通道；MET/LI 才做肾通道敏感性分析。",
+    avoid: "不要让同一个合并用药同时在 CLnr 和 CLrenal 中竞争，否则通道归因不稳。",
+    action: "建立协变量候选表：变量、作用参数、中心化方式、预期方向、样本量门槛、是否主分析。",
+  },
+  {
+    title: "第 7 课：模型评价和诊断图怎么看",
+    time: "20 分钟",
+    level: "核心",
+    nodes: ["model_evaluation", "vpc", "npde", "diagnostics", "sse"],
+    goal: "学会判断模型是否有系统偏倚，而不是只看图好不好看。",
+    learn: [
+      "DV-PRED 看总体预测，DV-IPRED 看个体拟合。",
+      "CWRES-TIME 和 CWRES-PRED 用于发现时间或浓度相关偏倚。",
+      "VPC/pcVPC 检查模型是否能重现观测分布。",
+    ],
+    example: "氨磺必利最终模型要按低/中/高浓度分层检查 |CWRES| > 2 的比例是否 <= 10%。",
+    avoid: "不要只报告一张 GOF 图；关键协变量分层和浓度分层也要报告。",
+    action: "输出 GOF、VPC、协变量分层 GOF、残差分层统计，并写出每张图的判断结论。",
+  },
+  {
+    title: "第 8 课：模拟、剂量建议和报告",
+    time: "18 分钟",
+    level: "应用",
+    nodes: ["trial_design", "decision_making", "dose_response", "model_application"],
+    goal: "把模型从“参数表”变成临床可用的结论。",
+    learn: [
+      "模拟要围绕临床问题，而不是为了展示模型能模拟。",
+      "剂量建议必须报告不确定性和适用范围。",
+      "论文报告要讲清楚数据、模型、协变量、诊断、模拟和限制。",
+    ],
+    example: "如果 eGFR 显著影响氨磺必利 CLrenal，下一步应该模拟不同肾功能分层下的稳态浓度，而不是只报告 theta。",
+    avoid: "不要把统计显著直接写成临床重要；要看效应大小是否足以改变剂量。",
+    action: "设计 3 个模拟场景：正常肾功能、中度肾损害、低 eGFR 合并用药患者。",
+  },
+];
+
+const caseSteps = [
+  {
+    title: "1. 数据体检",
+    text: "确认 ID、TIME、AMT、DV、EVID、WT、eGFR、BUN、UA、SEX、合并用药字段完整。输出缺失率、异常值和 BQL 比例。",
+  },
+  {
+    title: "2. 机制基础模型",
+    text: "继承双通道清除：CLrenal 由 eGFR 驱动，WT 用异速标尺固定。不要在协变量阶段改变基础结构。",
+  },
+  {
+    title: "3. 协变量预筛",
+    text: "连续变量检查分布和共线性；二分类合并用药要求阳性人数充足。样本太少只做探索性描述。",
+  },
+  {
+    title: "4. 主 SCM",
+    text: "BUN/UA 测试在 CLrenal 上；SEX/AGE/合并用药主分析测试在非 eGFR 解释清除通道或 V 上。",
+  },
+  {
+    title: "5. 肾通道敏感性分析",
+    text: "MET 和 LI 可分别测试到 CLrenal，但必须满足机制解释、RSE、诊断和稳定性，不能只凭 OFV 保留。",
+  },
+  {
+    title: "6. 最终验收",
+    text: "检查收敛、%RSE、方向合理性、GOF、VPC、CWRES 分层偏倚和模拟应用价值。",
+  },
+];
+
+const quizQuestions = [
+  {
+    question: "基础模型 false convergence，但某个协变量加入后 OFV 大幅下降。应该怎么做？",
+    options: ["保留该协变量", "先修基础模型，不能用不稳定模型做 SCM", "只要 RSE 小于 50% 就可以"],
+    answer: 1,
+    why: "协变量筛选依赖基础模型稳定。不稳定基础模型会让 OFV 改善失去解释意义。",
+  },
+  {
+    question: "eGFR 已经机制性进入 CLrenal，还要把 eGFR 当普通协变量再加到总 CL 上吗？",
+    options: ["不应重复加入", "应该加入，OFV 会更低", "只在女性患者加入"],
+    answer: 0,
+    why: "重复加入会造成共线性和重复解释，破坏机制通道含义。",
+  },
+  {
+    question: "合并用药阳性人数只有 3 人，但 SCM 显著。最稳妥的解释是什么？",
+    options: ["一定是强效药物相互作用", "可能由极少数样本驱动，应降级为探索性发现", "直接进入最终模型"],
+    answer: 1,
+    why: "二分类协变量样本太少时，LRT 和参数估计都不稳，不能作为主结论。",
+  },
+  {
+    question: "ETA shrinkage 很高时，ETA-协变量散点图应该如何使用？",
+    options: ["作为强证据", "完全不能看", "只能作为弱提示，需模型和诊断验证"],
+    answer: 2,
+    why: "高 shrinkage 会压缩 ETA，削弱或扭曲协变量趋势。",
+  },
+  {
+    question: "最终模型报告中，哪个组合最完整？",
+    options: ["OFV + 参数表", "GOF + VPC + RSE + shrinkage + 分层残差 + 临床解释", "只给最终公式"],
+    answer: 1,
+    why: "PopPK 模型可信度来自多维证据，不是单一统计指标。",
   },
 ];
 
@@ -391,7 +531,7 @@ function renderLessons() {
     .map((lesson, index) => `
       <button class="lesson-card${index === 0 ? " active" : ""}" type="button" data-index="${index}">
         <strong>${escapeHtml(lesson.title)}</strong>
-        <span>${escapeHtml(lesson.time)} · ${lesson.nodes.map((id) => nodeById(id)?.label).filter(Boolean).slice(0, 3).join(" / ")}</span>
+        <span>${escapeHtml(lesson.level)} · ${escapeHtml(lesson.time)}</span>
       </button>
     `)
     .join("");
@@ -414,13 +554,34 @@ function renderLessonDetail(index) {
     .filter(Boolean)
     .map((node) => `<button class="node-chip" type="button" data-node-id="${escapeHtml(node.id)}">${escapeHtml(node.label)}</button>`)
     .join("");
+  const learnItems = lesson.learn.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
 
   $("lessonDetail").innerHTML = `
-    <p class="eyebrow">${escapeHtml(lesson.time)}</p>
+    <p class="eyebrow">${escapeHtml(lesson.level)} · ${escapeHtml(lesson.time)}</p>
     <h3>${escapeHtml(lesson.title)}</h3>
-    <p><strong>你要学会：</strong>${escapeHtml(lesson.goal)}</p>
-    <p><strong>常见错误：</strong>${escapeHtml(lesson.avoid)}</p>
-    <p><strong>马上行动：</strong>${escapeHtml(lesson.action)}</p>
+    <div class="tutorial-meta">
+      <span>学习目标</span>
+      <p>${escapeHtml(lesson.goal)}</p>
+    </div>
+    <div class="lesson-sections">
+      <section>
+        <h4>你要掌握</h4>
+        <ul>${learnItems}</ul>
+      </section>
+      <section>
+        <h4>项目例子</h4>
+        <p>${escapeHtml(lesson.example)}</p>
+      </section>
+      <section>
+        <h4>常见错误</h4>
+        <p>${escapeHtml(lesson.avoid)}</p>
+      </section>
+      <section>
+        <h4>马上行动</h4>
+        <p>${escapeHtml(lesson.action)}</p>
+      </section>
+    </div>
+    <h4>对应图谱节点</h4>
     <div class="quick-stats">${chips}</div>
   `;
 
@@ -431,6 +592,53 @@ function renderLessonDetail(index) {
       $("searchInput").value = state.query;
       renderExplorer();
       document.querySelector("#explore").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
+
+function renderCaseLab() {
+  $("caseSteps").innerHTML = caseSteps
+    .map((step, index) => `
+      <article class="case-step">
+        <span>${String(index + 1).padStart(2, "0")}</span>
+        <div>
+          <h3>${escapeHtml(step.title)}</h3>
+          <p>${escapeHtml(step.text)}</p>
+        </div>
+      </article>
+    `)
+    .join("");
+}
+
+function renderQuiz() {
+  $("quizBox").innerHTML = quizQuestions
+    .map((item, index) => `
+      <article class="quiz-card" data-question="${index}">
+        <h3>${index + 1}. ${escapeHtml(item.question)}</h3>
+        <div class="quiz-options">
+          ${item.options
+            .map((option, optionIndex) => `<button type="button" data-option="${optionIndex}">${escapeHtml(option)}</button>`)
+            .join("")}
+        </div>
+        <p class="quiz-feedback" aria-live="polite"></p>
+      </article>
+    `)
+    .join("");
+
+  $("quizBox").querySelectorAll(".quiz-card").forEach((card) => {
+    const questionIndex = Number(card.dataset.question);
+    const question = quizQuestions[questionIndex];
+    card.querySelectorAll("button").forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = Number(button.dataset.option);
+        const correct = selected === question.answer;
+        card.querySelectorAll("button").forEach((item) => {
+          item.classList.remove("correct", "wrong");
+          if (Number(item.dataset.option) === question.answer) item.classList.add("correct");
+        });
+        if (!correct) button.classList.add("wrong");
+        card.querySelector(".quiz-feedback").textContent = `${correct ? "答对。" : "这题要重看。"}${question.why}`;
+      });
     });
   });
 }
@@ -459,6 +667,8 @@ async function init() {
     renderStats();
     renderTypeFilters();
     renderLessons();
+    renderCaseLab();
+    renderQuiz();
     renderChecklist();
     wireSearch();
     renderExplorer();
